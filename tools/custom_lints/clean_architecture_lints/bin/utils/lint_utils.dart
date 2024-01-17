@@ -2,6 +2,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer_plugin/protocol/protocol_generated.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_core.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:equatable/equatable.dart';
 
 /// returns the package name for given uri, for example `package:bloc/bloc.dart` will return `bloc`
 String packageFromUri(String? uri) {
