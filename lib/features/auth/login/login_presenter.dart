@@ -12,4 +12,12 @@ class LoginPresenter extends Cubit<LoginViewModel> {
 
   // ignore: unused_element
   LoginPresentationModel get _model => state as LoginPresentationModel;
+
+  void onUsernameChanged(String value) {
+    emit(_model.copyWith(username: value));
+  }
+
+  void onPasswordChanged(String value) {
+    emit(_model.copyWith(password: value));
+  }
 }
