@@ -260,7 +260,7 @@ We use the following commands to run it, (but please refer to [Makefile](Makefil
 ```bash
 fvm flutter pub run dart_code_metrics:metrics analyze lib --set-exit-on-violation-level=warning --fatal-style --fatal-performance --fatal-warnings
 fvm flutter pub run dart_code_metrics:metrics check-unused-code . --fatal-unused
-fvm flutter pub run dart_code_metrics:metrics check-unused-files . --fatal-unused --exclude="{templates/**,.dart_tool/**,lib/generated/**}"
+fvm flutter pub run dart_code_metrics:metrics check-unused-files . --fatal-unused --exclude="{templates/**,.dart_tool/**,lib/generated/**,tools/custom_lints/clean_architecture_lints/**}"
 ```
 
 ### Fastlane
