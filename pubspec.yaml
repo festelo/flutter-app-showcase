@@ -19,7 +19,7 @@ dependency_overrides:
       url: https://github.com/andrzejchm/dart_custom_lint.git
       path: packages/custom_lint_builder
       ref: picnic
-      
+
 dependencies:
   flutter:
     sdk: flutter
@@ -68,6 +68,9 @@ dev_dependencies:
   mocktail: 0.3.0
   bloc_test: 9.0.3
 
+  # flutter gen 
+  build_runner: 2.2.0
+  flutter_gen_runner: 4.3.0
 
 
 

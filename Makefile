@@ -2,8 +2,8 @@ package := flutter_app
 file := test/coverage_helper_test.dart
 
 check:
-	@echo "\033[32m Run fluttergen... \033[0m"
-	@fluttergen -c pubspec.yaml
+	@echo "\033[32m Run build_runner to do code generation... \033[0m"
+	@fvm flutter packages pub run build_runner build
 	@echo "\033[32m Formatting code... \033[0m"
 	@fvm flutter format --line-length 120 lib test
 	@echo "\033[32m Flutter analyze... \033[0m"
