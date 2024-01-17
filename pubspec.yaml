@@ -7,6 +7,19 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.17.0 <3.0.0"
 
+dependency_overrides:
+  custom_lint:
+    git:
+      url: https://github.com/andrzejchm/dart_custom_lint.git
+      path: packages/custom_lint
+      ref: picnic
+
+  custom_lint_builder:
+    git:
+      url: https://github.com/andrzejchm/dart_custom_lint.git
+      path: packages/custom_lint_builder
+      ref: picnic
+      
 dependencies:
   flutter:
     sdk: flutter
