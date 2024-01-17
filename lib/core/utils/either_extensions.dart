@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_demo/core/helpers.dart';
 import 'package:flutter_demo/core/utils/logging.dart';
@@ -69,8 +71,8 @@ extension FutureEither<L, R> on Future<Either<L, R>> {
   }
 
   Future<R2> asyncFold<R2>(
-    R2 Function(L fail) fail,
-    R2 Function(R success) success,
+    FutureOr<R2> Function(L fail) fail,
+    FutureOr<R2> Function(R success) success,
   ) async =>
       (await this).fold(fail, success);
 
