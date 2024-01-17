@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_demo/core/domain/stores/user_store.dart';
 import 'package:flutter_demo/dependency_injection/app_component.dart';
@@ -6,6 +8,7 @@ import 'package:flutter_demo/features/app_init/app_init_navigator.dart';
 import 'package:flutter_demo/features/app_init/app_init_page.dart';
 import 'package:flutter_demo/features/app_init/app_init_presentation_model.dart';
 import 'package:flutter_demo/features/app_init/app_init_presenter.dart';
+import 'package:flutter_demo/features/auth/login/login_initial_params.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -41,6 +44,7 @@ Future<void> main() async {
     setUp: () async {
       _initMvp();
       when(() => AppInitMocks.appInitUseCase.execute()).thenAnswer((_) => successFuture(unit));
+      when(() => navigator.openLogin(const LoginInitialParams())).thenAnswer((_) => Completer().future);
     },
     pageBuilder: () => page,
   );

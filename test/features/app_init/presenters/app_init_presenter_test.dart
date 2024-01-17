@@ -5,6 +5,7 @@ import 'package:flutter_demo/core/domain/model/user.dart';
 import 'package:flutter_demo/features/app_init/app_init_initial_params.dart';
 import 'package:flutter_demo/features/app_init/app_init_presentation_model.dart';
 import 'package:flutter_demo/features/app_init/app_init_presenter.dart';
+import 'package:flutter_demo/features/auth/login/login_initial_params.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -27,6 +28,7 @@ void main() {
         Stream.fromIterable([const User.anonymous()]),
       );
       when(() => AppInitMocks.appInitUseCase.execute()).thenAnswer((_) => successFuture(unit));
+      when(() => navigator.openLogin(const LoginInitialParams())).thenAnswer((_) => Future.value());
 
       // WHEN
       await presenter.onInit();
